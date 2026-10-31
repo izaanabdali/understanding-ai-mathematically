@@ -1,42 +1,19 @@
-# How Much Mathematics Do We Actually Need to Understand AI?
+# Understanding AI mathematically
 
-An animated presentation developed for DigiTech Fest 2026
-at Queen Mary University of London.
+Manim and Manim Slides presentation for DigiTech Fest 2026 covering neural-network predictions, loss, gradient descent and backpropagation.
 
-## About
+## Files
 
-This project explores the mathematics behind neural networks
-and why mathematical understanding matters when building AI systems.
+Start with `presentation.py`. Existing notebooks retain the original project work.
 
-The presentation addresses three questions:
+## Running the work
 
-1. How do neural networks make predictions?
-2. How do neural networks learn?
-3. Why does understanding AI matter?
+Use Python with pandas, NumPy, scikit-learn, Matplotlib, Jupyter and openpyxl for the data notebooks; some also use seaborn or odfpy. Open notebooks from their repository root so relative data paths resolve. Check all required input files before execution. Dependencies are not yet version-pinned; results may vary across environments. For the Manim presentation, use its original rendering workflow instead.
 
-## Topics Covered
+## Results and limitations
 
-- Neural network architecture
-- Weights and biases
-- Activation functions
-- Forward propagation
-- Cross-entropy loss
-- Gradient descent
-- Backpropagation
-- Accuracy and recall
-- Model robustness and responsible AI
+Rendering requires Manim, Manim Slides and compatible graphics and LaTeX dependencies. This is an educational presentation, not an empirical modelling study.
 
-## Technologies
+## Contributions
 
-- Python
-- Manim Community
-- Manim Slides
-
-## Presentation
-
-An interactive web version is available through GitHub Pages.
-
-## Author
-
-Second-year BSc Applied Artificial Intelligence student
-at Queen Mary University of London.
+For group coursework, the repository contains team work. Individual responsibilities are not documented here; do not infer sole authorship.
