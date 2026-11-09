@@ -18,3 +18,7 @@ slides/
 # Operating system
 .DS_Store
 Thumbs.db
+
+# Exported presentation files outside website folder
+/DigiFest.html
+/DigiFest_assets/
