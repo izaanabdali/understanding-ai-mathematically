@@ -795,7 +795,7 @@ class DigiFest(Slide):
             output_layer
         )
 
-        layers.arrange(RIGHT, buff=1.35)
+        layers.arrange(RIGHT, buff=1.9)
         layers.move_to(DOWN * 0.15)
 
         # Labels
@@ -829,7 +829,7 @@ class DigiFest(Slide):
         )
 
         for label, layer in zip(labels, layers):
-            label.next_to(layer, DOWN, buff=0.35)
+            label.next_to(layer, DOWN, buff=0.18)
 
         # =====================================
         # ANIMATE LAYERS ONE AT A TIME
@@ -938,7 +938,7 @@ class DigiFest(Slide):
             color=YELLOW
         )
 
-        prediction.to_edge(DOWN, buff=0.2)
+        prediction.to_edge(DOWN, buff=0.12)
 
         self.play(Write(prediction))
 
@@ -1386,7 +1386,7 @@ class DigiFest(Slide):
             output_layer
         )
 
-        layers.arrange(RIGHT, buff=1.5)
+        layers.arrange(RIGHT, buff=1.9)
         layers.move_to(DOWN * 0.15)
 
         # Connections
@@ -1417,7 +1417,7 @@ class DigiFest(Slide):
         )
 
         for label, layer in zip(layer_labels, layers):
-            label.next_to(layer, DOWN, buff=0.35)
+            label.next_to(layer, DOWN, buff=0.18)
 
         self.play(
             FadeIn(connections),
@@ -1523,7 +1523,7 @@ class DigiFest(Slide):
 
         prediction = Text(
             "Prediction: 3",
-            font_size=38,
+            font_size=30,
             color=YELLOW
         )
 
@@ -1890,7 +1890,7 @@ class DigiFest(Slide):
             }
         )
 
-        axes.shift(DOWN * 0.3)
+        axes.shift(UP * 0.2)
 
         x_label = Text(
             "Probability of Correct Answer",
@@ -2010,7 +2010,7 @@ class DigiFest(Slide):
             color=YELLOW
         )
 
-        takeaway.to_edge(DOWN, buff=0.15)
+        takeaway.to_edge(DOWN, buff=0.2)
 
         self.play(Write(takeaway))
 
@@ -2702,6 +2702,8 @@ class DigiFest(Slide):
             color=YELLOW
         )
 
+        chain_title.to_edge(UP, buff=0.35)
+
         self.play(
             ReplacementTransform(
                 backprop_title,
@@ -2913,7 +2915,7 @@ class DigiFest(Slide):
             }
         )
 
-        train_axes.move_to(DOWN * 1.45)
+        train_axes.move_to(DOWN * 0.85)
 
         iteration_label = Text(
             "Training Iteration",
@@ -3342,8 +3344,9 @@ class DigiFest(Slide):
             buff=0.09
         )
 
-        patient_dots.set_width(10.5)
-        patient_dots.move_to(DOWN * 0.3)
+        # Reserve separate bands for the heading and bottom captions.
+        patient_dots.set_height(4.6)
+        patient_dots.move_to(DOWN * 0.25)
 
         self.play(
             LaggedStart(
@@ -3894,6 +3897,9 @@ class DigiFest(Slide):
                 font_size=19,
                 color=GREY_B
             )
+
+            if description_text.width > card.width - 0.4:
+                description_text.scale_to_fit_width(card.width - 0.4)
 
             card_content = VGroup(
                 number_text,
