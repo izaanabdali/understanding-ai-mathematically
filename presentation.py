@@ -1,6 +1,7 @@
 from manim import *
 from manim_slides import Slide
 from confused_robot import ConfusedRobot
+from backprop_nudge import backprop_nudge
 
 # =====================================
 # PRESENTATION SETTINGS
@@ -2711,61 +2712,9 @@ class DigiFest(Slide):
             )
         )
 
-        chain_rule = MathTex(
-            r"\frac{\partial L}{\partial w}"
-            r"="
-            r"\frac{\partial L}{\partial a}"
-            r"\cdot"
-            r"\frac{\partial a}{\partial w}",
-            font_size=58
-        )
-
-        chain_rule.move_to(ORIGIN)
-
-        self.play(
-            Write(chain_rule),
-            run_time=2.5
-        )
-
-        self.next_slide()
-
-        # =====================================
-        # EXPLAIN THE CHAIN RULE
-        # =====================================
-        self.play(
-            FadeOut(chain_title)
-        )
-
-        explanation = VGroup(
-            Text(
-                "How does the activation affect loss?",
-                font_size=28,
-                color=BLUE
-            ),
-            Text(
-                "How does the weight affect activation?",
-                font_size=28,
-                color=GREEN
-            )
-        )
-
-        explanation.arrange(DOWN, buff=0.4)
-        explanation.to_edge(DOWN, buff=0.5)
-
-        self.play(Write(explanation[0]))
-        self.next_slide()
-
-        self.play(Write(explanation[1]))
-        self.next_slide()
-
-        # =====================================
-        # CONNECT BACK TO GRADIENT DESCENT
-        # =====================================
-
-        self.play(
-            FadeOut(explanation),
-            FadeOut(chain_rule)
-        )
+        self.play(FadeOut(chain_title))
+        nudge_diagram = backprop_nudge(self)
+        self.play(FadeOut(nudge_diagram))
 
         final_equation = MathTex(
             r"w_{\text{new}}"
