@@ -4078,14 +4078,14 @@ class DigiFest(Slide):
             buff=0.5
         )
 
-        thank_you_group.move_to(UP * 0.8)
+        thank_you_group.move_to(LEFT * 2.6 + UP * 0.8)
 
         final_robot = ConfusedRobot(
             scale_factor=0.65
         )
 
         final_robot.happy_face()
-        final_robot.move_to(DOWN * 2.0)
+        final_robot.move_to(LEFT * 2.6 + DOWN * 2.0)
 
         self.play(
             Write(thank_you),
@@ -4097,6 +4097,13 @@ class DigiFest(Slide):
             FadeIn(final_robot, shift=UP * 0.3),
             run_time=1.5
         )
+
+        github_qr = ImageMobject(str(__import__("pathlib").Path(__file__).parent / "docs" / "github-qr.png"))
+        github_qr.height = 3.1
+        github_qr.move_to(RIGHT * 3.0 + UP * 0.3)
+        github_label = Text("github.com/izaanabdali", font_size=23).next_to(github_qr, DOWN, buff=0.25)
+        github_caption = Text("Find me on GitHub", font_size=28, color=YELLOW).next_to(github_qr, UP, buff=0.25)
+        self.play(FadeIn(github_qr), Write(github_label), Write(github_caption))
 
         # Robot waves
         final_robot.raise_right_hand()
